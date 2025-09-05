@@ -1,0 +1,4 @@
+[build]
+  publish = "static"
+[dev]
+  publish = "static"
