@@ -1,11 +1,169 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ONE Channel</title>
-  </head>
-  <body>
-    <h1>Welcome to ONE Channel</h1>
-    <a href="/admin">Go to Admin</a>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE Channel | Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* Reset & basic */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans Myanmar', sans-serif; line-height: 1.6; color: #333; background: #fff9e6; min-height: 100vh; display: flex; flex-direction: column; scroll-behavior: smooth; }
+body.dark { background: #2c3e50; color: #f0f0f0; }
+
+/* Floating menu */
+.floating-menu { position: fixed; top: 10px; right: 10px; background: #0f70b7; color: #fff; border-radius: 8px; padding: 0.5rem; z-index: 1000; display: flex; gap: 0.5rem; }
+.floating-menu a { color: #fff; font-size: 1.2rem; text-decoration: none; }
+
+/* Header */
+.logo-bumper { text-align: center; margin: 1rem 0; }
+.logo-bumper img { max-width: 300px; border-radius: 8px; }
+.subtitle { text-align: center; font-size: 1rem; color: #fff; background: #0f70b7; padding: 0.5rem; border-radius: 4px; margin-bottom: 1rem; }
+body.dark .subtitle { background: #0b5a94; }
+
+/* Main content cards */
+.main-content { flex: 1; display: flex; flex-direction: column; padding: 1rem; }
+.thumbnail-cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
+.thumbnail-card { background: #fdf2e9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s; text-align: center; width: 200px; display: flex; flex-direction: column; }
+body.dark .thumbnail-card { background: #3a4f63; color: #fff; }
+.thumbnail-card:hover { transform: scale(1.05); }
+.thumbnail-card img { width: 100%; height: 150px; object-fit: cover; }
+.thumbnail-card p { padding: 0.5rem; font-size: 1rem; color: #fff; background: #0f70b7; flex: 1; display: flex; align-items: center; justify-content: center; margin: 0; }
+body.dark .thumbnail-card p { background: #0b5a94; }
+
+/* Sections */
+section { display: none; padding: 2rem; max-width: 800px; margin: auto; scroll-margin-top: 60px; }
+section h2 { text-align: center; color: #0f70b7; margin-bottom: 1rem; }
+.card-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+.card-grid .card { flex: 1 1 200px; background: #fdf2e9; border-radius: 8px; padding: 1rem; cursor: pointer; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+body.dark .card-grid .card { background: #3a4f63; color: #fff; }
+.card-grid .card:hover { transform: scale(1.03); }
+.back-btn { display: inline-block; margin: 1rem auto; padding: 0.5rem 1rem; background: #0f70b7; color: #fff; border-radius: 4px; text-decoration: none; }
+body.dark .back-btn { background: #0b5a94; }
+p.nattpint { background: #fdf2e9; padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; }
+body.dark p.nattpint { background: #3a4f63; color: #fff; }
+
+/* Responsive */
+@media(max-width:600px){.thumbnail-card img{height:120px}.thumbnail-card p{font-size:0.9rem}}
+</style>
+</head>
+<body>
+
+<!-- Floating menu -->
+<div class="floating-menu">
+  <a href="https://t.me/onechannel" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+  <a href="viber://chat?number=onechannel" target="_blank"><i class="fab fa-viber"></i></a>
+  <a href="https://facebook.com/onechannel" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://youtube.com/onechannel" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+<!-- Header -->
+<div class="logo-bumper">
+<img src="https://placehold.co/300x100?text=ONE+Channel+Logo" alt="ONE Channel Logo">
+</div>
+<div class="subtitle">ONE Channel မှ နွေးထွေးစွာ ကြိုဆိုပါတယ်။</div>
+
+<!-- Homepage Cards -->
+<div class="main-content">
+<div class="thumbnail-cards">
+  <div class="thumbnail-card" onclick="showSection('dharma-section')">
+    <img src="https://placehold.co/250x150?text=Dharma" alt="တရားတော်များ">
+    <p>တရားတော်များ</p>
+  </div>
+  <div class="thumbnail-card" onclick="showSection('baydin-section')">
+    <img src="https://placehold.co/250x150?text=Fortune" alt="ကံကြမ္မာရေးရာအဖြာဖြာ">
+    <p>ကံကြမ္မာရေးရာအဖြာဖြာ</p>
+  </div>
+  <div class="thumbnail-card" onclick="showSection('health-section')">
+    <img src="https://placehold.co/250x150?text=Health" alt="ကျန်းမာရေးရာအဖြာဖြာ">
+    <p>ကျန်းမာရေးရာအဖြာဖြာ</p>
+  </div>
+  <div class="thumbnail-card" onclick="showSection('jataka-section')">
+    <img src="https://placehold.co/250x150?text=Jataka" alt="ဇာတ်နိပါတ်တော်များ">
+    <p>ဇာတ်နိပါတ်တော်များ</p>
+  </div>
+</div>
+</div>
+
+<!-- Dharma Section -->
+<section id="dharma-section">
+<h2>တရားတော်များ</h2>
+<div class="card-grid">
+  <div class="card" onclick="showSub('nattpint-section')">နတ်ပင့်</div>
+  <div class="card" onclick="showSub('prait-section')">ပရိတ်</div>
+  <div class="card" onclick="showSub('patthan-section')">ပဌာန်း</div>
+  <div class="card" onclick="showSub('metta-section')">မေတ္တာပို့</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
+
+<section id="nattpint-section"><h2>နတ်ပင့်</h2><p class="nattpint">၁။ သမန္တာ စက္က ဝါဠေသု ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+<section id="prait-section"><h2>ပရိတ်</h2><p class="nattpint">ပရိတ် အကြောင်း ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+<section id="patthan-section"><h2>ပဌာန်း</h2><p class="nattpint">ပဌာန်း အကြောင်း ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+<section id="metta-section"><h2>မေတ္တာပို့</h2><p class="nattpint">မေတ္တာပို့ အကြောင်း ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+
+<!-- Baydin Section -->
+<section id="baydin-section">
+<h2>ကံကြမ္မာရေးရာအဖြာဖြာ</h2>
+<div class="card-grid">
+  <div class="card" onclick="showSub('jataka-card')">ဇာတာစစ်မယ်</div>
+  <div class="card" onclick="showSub('asat-ana-card')">အသားလုပ်နမိတ်အဟော</div>
+  <div class="card" onclick="showSub('asaung-card')">အဆောင်ယတြာ</div>
+  <div class="card" onclick="showSub('ganan-card')">ဂဏန်းဗေဒင်</div>
+  <div class="card" onclick="showSub('dream-card')">အိမ်မက်ဟောစာတမ်း</div>
+  <div class="card" onclick="showSub('hmay-card')">မှဲ့ဟောစာတမ်း</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
+
+<!-- Health Section -->
+<section id="health-section">
+<h2>ကျန်းမာရေးရာအဖြာဖြာ</h2>
+<div class="card-grid">
+  <div class="card">အိမ်တွင်းကုထုံး</div>
+  <div class="card">တိုင်းရင်းဆေးများ</div>
+  <div class="card">ရောဂါလက္ခဏာများ</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
+
+<!-- Jataka Section -->
+<section id="jataka-section">
+<h2>ဇာတ်နိပါတ်တော်များ</h2>
+<div class="card-grid">
+  <div class="card">ဇာတ်နိပါတ် အခန်း ၁</div>
+  <div class="card">ဇာတ်နိပါတ် အခန်း ၂</div>
+  <div class="card">ဇာတ်နိပါတ် အခန်း ၃</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
+
+<script>
+function showSection(id){
+  document.querySelector('.main-content').style.display='none';
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showSub(id){
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function backToParent(parentId){
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.getElementById(parentId).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function backToHome(){
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.querySelector('.main-content').style.display='flex';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html
