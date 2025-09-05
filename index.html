@@ -40,404 +40,169 @@
         </script><!DOCTYPE html>
 <html lang="my">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ဗီဒီယိုကြည့်ရှုရန်</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .section-card {
-      transition: transform 0.3s;
-    }
-    .section-card:hover {
-      transform: scale(1.05);
-    }
-    .section-header {
-      background-color: #1e40af;
-      color: white;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      cursor: pointer;
-    }
-    .section-header:hover {
-      background-color: #1e3a8a;
-    }
-    .footer-banner {
-      background-color: #1f2937;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    .video-card {
-      transition: transform 0.3s;
-    }
-    .video-card:hover {
-      transform: scale(1.05);
-    }
-    .comment-box {
-      width: 100%;
-      margin-top: 0.5rem;
-      padding: 0.5rem;
-      border: 1px solid #d1d5db;
-      border-radius: 0.375rem;
-    }
-    .comment-list {
-      max-height: 150px;
-      overflow-y: auto;
-      margin-top: 0.5rem;
-    }
-    .ad-banner {
-      width: 100%;
-      max-width: 1280px;
-      height: 100px;
-      background-color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 2rem auto;
-      border-radius: 8px;
-    }
-    @media (min-width: 640px) {
-      .ad-banner {
-        height: 120px;
-      }
-    }
-    @media (min-width: 1024px) {
-      .ad-banner {
-        height: 150px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE Channel | Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* Reset & basic */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans Myanmar', sans-serif; line-height: 1.6; color: #333; background: #fff9e6; min-height: 100vh; display: flex; flex-direction: column; scroll-behavior: smooth; }
+body.dark { background: #2c3e50; color: #f0f0f0; }
+
+/* Floating menu */
+.floating-menu { position: fixed; top: 10px; right: 10px; background: #0f70b7; color: #fff; border-radius: 8px; padding: 0.5rem; z-index: 1000; display: flex; gap: 0.5rem; }
+.floating-menu a { color: #fff; font-size: 1.2rem; text-decoration: none; }
+
+/* Header */
+.logo-bumper { text-align: center; margin: 1rem 0; }
+.logo-bumper img { max-width: 300px; border-radius: 8px; }
+.subtitle { text-align: center; font-size: 1rem; color: #fff; background: #0f70b7; padding: 0.5rem; border-radius: 4px; margin-bottom: 1rem; }
+body.dark .subtitle { background: #0b5a94; }
+
+/* Main content cards */
+.main-content { flex: 1; display: flex; flex-direction: column; padding: 1rem; }
+.thumbnail-cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
+.thumbnail-card { background: #fdf2e9; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s; text-align: center; width: 200px; display: flex; flex-direction: column; }
+body.dark .thumbnail-card { background: #3a4f63; color: #fff; }
+.thumbnail-card:hover { transform: scale(1.05); }
+.thumbnail-card img { width: 100%; height: 150px; object-fit: cover; }
+.thumbnail-card p { padding: 0.5rem; font-size: 1rem; color: #fff; background: #0f70b7; flex: 1; display: flex; align-items: center; justify-content: center; margin: 0; }
+body.dark .thumbnail-card p { background: #0b5a94; }
+
+/* Sections */
+section { display: none; padding: 2rem; max-width: 800px; margin: auto; scroll-margin-top: 60px; }
+section h2 { text-align: center; color: #0f70b7; margin-bottom: 1rem; }
+.card-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+.card-grid .card { flex: 1 1 200px; background: #fdf2e9; border-radius: 8px; padding: 1rem; cursor: pointer; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+body.dark .card-grid .card { background: #3a4f63; color: #fff; }
+.card-grid .card:hover { transform: scale(1.03); }
+.back-btn { display: inline-block; margin: 1rem auto; padding: 0.5rem 1rem; background: #0f70b7; color: #fff; border-radius: 4px; text-decoration: none; }
+body.dark .back-btn { background: #0b5a94; }
+p.nattpint { background: #fdf2e9; padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; }
+body.dark p.nattpint { background: #3a4f63; color: #fff; }
+
+/* Responsive */
+@media(max-width:600px){.thumbnail-card img{height:120px}.thumbnail-card p{font-size:0.9rem}}
+</style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
-  <div id="main-page" class="w-full">
-    <!-- Channel Logo -->
-    <div class="mb-6 flex justify-center">
-      <img src="https://via.placeholder.com/150x50?text=Channel+Logo" alt="Channel Logo" class="h-16">
-    </div>
+<body>
 
-    <!-- Video Sections -->
-    <div class="w-full max-w-screen-xl mx-auto">
-      <!-- Row 1 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-        <!-- Section 1: တရားတော်များ -->
-        <div class="section-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showSectionPage('section-1')">
-          <img src="https://via.placeholder.com/300x200?text=Dhamma+Section" alt="တရားတော်များ" class="w-full h-48 object-cover">
-          <h2 class="text-2xl font-bold section-header text-center">တရားတော်များ</h2>
-        </div>
-        <!-- Section 2: ဗေဒင် -->
-        <div class="section-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showSectionPage('section-2')">
-          <img src="https://via.placeholder.com/300x200?text=Astrology+Section" alt="ဗေဒင်" class="w-full h-48 object-cover">
-          <h2 class="text-2xl font-bold section-header text-center">ဗေဒင်</h2>
-        </div>
-      </div>
+<!-- Floating menu -->
+<div class="floating-menu">
+  <a href="https://t.me/onechannel" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+  <a href="viber://chat?number=onechannel" target="_blank"><i class="fab fa-viber"></i></a>
+  <a href="https://facebook.com/onechannel" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://youtube.com/onechannel" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
 
-      <!-- Ad Banner 1 -->
-      <div class="ad-banner">
-        <img src="https://via.placeholder.com/1280x90?text=Advertisement+1" alt="Ad Banner 1" class="w-full h-full object-cover">
-      </div>
+<!-- Header -->
+<div class="logo-bumper">
+<img src="https://placehold.co/300x100?text=ONE+Channel+Logo" alt="ONE Channel Logo">
+</div>
+<div class="subtitle">ONE Channel မှ နွေးထွေးစွာ ကြိုဆိုပါတယ်။</div>
 
-      <!-- Row 2 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-        <!-- Section 3: ကျန်းမာရေး -->
-        <div class="section-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showSectionPage('section-3')">
-          <img src="https://via.placeholder.com/300x200?text=Health+Section" alt="ကျန်းမာရေး" class="w-full h-48 object-cover">
-          <h2 class="text-2xl font-bold section-header text-center">ကျန်းမာရေး</h2>
-        </div>
-        <!-- Section 4: ပုံပြင်များ -->
-        <div class="section-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showSectionPage('section-4')">
-          <img src="https://via.placeholder.com/300x200?text=Story+Section" alt="ပုံပြင်များ" class="w-full h-48 object-cover">
-          <h2 class="text-2xl font-bold section-header text-center">ပုံပြင်များ</h2>
-        </div>
-      </div>
-
-      <!-- Ad Banner 2 -->
-      <div class="ad-banner">
-        <img src="https://via.placeholder.com/1280x90?text=Advertisement+2" alt="Ad Banner 2" class="w-full h-full object-cover">
-      </div>
-
-      <!-- Row 3 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-        <!-- Section 5: ထူးခြားဆန်းပြား -->
-        <div class="section-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showSectionPage('section-5')">
-          <img src="https://via.placeholder.com/300x200?text=Unique+Section" alt="ထူးခြားဆန်းပြား" class="w-full h-48 object-cover">
-          <h2 class="text-2xl font-bold section-header text-center">ထူးခြားဆန်းပြား</h2>
-        </div>
-        <!-- Section 6: သင်တန်းများ -->
-        <div class="section-card bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="showSectionPage('section-6')">
-          <img src="https://via.placeholder.com/300x200?text=Course+Section" alt="သင်တန်းများ" class="w-full h-48 object-cover">
-          <h2 class="text-2xl font-bold section-header text-center">သင်တန်းများ</h2>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer Banner -->
-    <footer class="footer-banner w-full mt-8">
-      <h3 class="text-xl font-bold mb-2">ဆက်သွယ်ရန်</h3>
-      <p>Phone: +95 123 456 789</p>
-      <p>ရုံးလိပ်စာ: အမှတ် ၁၂၃၊ အနော်ရထာလမ်း၊ ရန်ကုန်မြို့၊ မြန်မာနိုင်ငံ</p>
-      <p>Email: contact@yourchannel.com</p>
-    </footer>
+<!-- Homepage Cards -->
+<div class="main-content">
+<div class="thumbnail-cards">
+  <div class="thumbnail-card" onclick="showSection('dharma-section')">
+    <img src="https://placehold.co/250x150?text=Dharma" alt="တရားတော်များ">
+    <p>တရားတော်များ</p>
   </div>
-
-  <!-- Section Page Template -->
-  <div id="section-page" class="hidden w-full">
-    <!-- Back Button -->
-    <div class="max-w-screen-xl mx-auto mb-6">
-      <button id="back-button" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 flex items-center">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-        Back
-      </button>
-    </div>
-
-    <!-- Section Title and Videos -->
-    <div class="w-full max-w-screen-xl mx-auto">
-      <h2 id="section-title" class="text-2xl font-bold section-header mb-4"></h2>
-      <div id="section-videos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </div>
-
-    <!-- Footer Banner -->
-    <footer class="footer-banner w-full mt-8">
-      <h3 class="text-xl font-bold mb-2">ဆက်သွယ်ရန်</h3>
-      <p>Phone: +95 123 456 789</p>
-      <p>ရုံးလိပ်စာ: အမှတ် ၁၂၃၊ အနော်ရထာလမ်း�، ရန်ကုန်မြို့၊ မြန်မာနိုင်ငံ</p>
-      <p>Email: contact@yourchannel.com</p>
-    </footer>
+  <div class="thumbnail-card" onclick="showSection('baydin-section')">
+    <img src="https://placehold.co/250x150?text=Fortune" alt="ကံကြမ္မာရေးရာအဖြာဖြာ">
+    <p>ကံကြမ္မာရေးရာအဖြာဖြာ</p>
   </div>
+  <div class="thumbnail-card" onclick="showSection('health-section')">
+    <img src="https://placehold.co/250x150?text=Health" alt="ကျန်းမာရေးရာအဖြာဖြာ">
+    <p>ကျန်းမာရေးရာအဖြာဖြာ</p>
+  </div>
+  <div class="thumbnail-card" onclick="showSection('jataka-section')">
+    <img src="https://placehold.co/250x150?text=Jataka" alt="ဇာတ်နိပါတ်တော်များ">
+    <p>ဇာတ်နိပါတ်တော်များ</p>
+  </div>
+</div>
+</div>
 
-  <script>
-    // ဗီဒီယိုဒေတာ (အခန်းအလိုက်)
-    const videoSections = {
-      'section-1': {
-        title: 'တရားတော်များ',
-        videos: [
-          {
-            id: 'v1',
-            title: 'ဗီဒီယို ၁ - တရားတော်များ',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Dhamma+Video+1',
-            likes: 0,
-            comments: []
-          },
-          {
-            id: 'v7',
-            title: 'ဗီဒီယို ၂ - တရားတော်များ',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Dhamma+Video+2',
-            likes: 0,
-            comments: []
-          }
-        ]
-      },
-      'section-2': {
-        title: 'ဗေဒင်',
-        videos: [
-          {
-            id: 'v2',
-            title: 'ဗီဒီယို ၁ - ဗေဒင်',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Astrology+Video+1',
-            likes: 0,
-            comments: []
-          }
-        ]
-      },
-      'section-3': {
-        title: 'ကျန်းမာရေး',
-        videos: [
-          {
-            id: 'v3',
-            title: 'ဗီဒီယို ၁ - ကျန်းမာရေး',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Health+Video+1',
-            likes: 0,
-            comments: []
-          }
-        ]
-      },
-      'section-4': {
-        title: 'ပုံပြင်များ',
-        videos: [
-          {
-            id: 'v4',
-            title: 'ဗီဒီယို ၁ - ပုံပြင်များ',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Story+Video+1',
-            likes: 0,
-            comments: []
-          }
-        ]
-      },
-      'section-5': {
-        title: 'ထူးခြားဆန်းပြား',
-        videos: [
-          {
-            id: 'v5',
-            title: 'ဗီဒီယို ၁ - ထူးခြားဆန်းပြား',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_2mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Unique+Video+1',
-            likes: 0,
-            comments: []
-          }
-        ]
-      },
-      'section-6': {
-        title: 'သင်တန်းများ',
-        videos: [
-          {
-            id: 'v6',
-            title: 'ဗီဒီယို ၁ - သင်တန်းများ',
-            url: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_5mb.mp4',
-            thumbnail: 'https://via.placeholder.com/300x200?text=Course+Video+1',
-            likes: 0,
-            comments: []
-          }
-        ]
-      }
-    };
+<!-- Dharma Section -->
+<section id="dharma-section">
+<h2>တရားတော်များ</h2>
+<div class="card-grid">
+  <div class="card" onclick="showSub('nattpint-section')">နတ်ပင့်</div>
+  <div class="card" onclick="showSub('prait-section')">ပရိတ်</div>
+  <div class="card" onclick="showSub('patthan-section')">ပဌာန်း</div>
+  <div class="card" onclick="showSub('metta-section')">မေတ္တာပို့</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
 
-    // Local storage မှာ likes နဲ့ comments သိမ်းရန်
-    function loadData() {
-      const storedData = localStorage.getItem('videoData');
-      if (storedData) {
-        const parsedData = JSON.parse(storedData);
-        Object.keys(videoSections).forEach(sectionId => {
-          videoSections[sectionId].videos.forEach((video, index) => {
-            if (parsedData[video.id]) {
-              video.likes = parsedData[video.id].likes || 0;
-              video.comments = parsedData[video.id].comments || [];
-            }
-          });
-        });
-      }
-    }
+<section id="nattpint-section"><h2>နတ်ပင့်</h2><p class="nattpint">၁။ သမန္တာ စက္က ဝါဠေသု ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+<section id="prait-section"><h2>ပရိတ်</h2><p class="nattpint">ပရိတ် အကြောင်း ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+<section id="patthan-section"><h2>ပဌာန်း</h2><p class="nattpint">ပဌာန်း အကြောင်း ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
+<section id="metta-section"><h2>မေတ္တာပို့</h2><p class="nattpint">မေတ္တာပို့ အကြောင်း ...</p><a href="#" class="back-btn" onclick="backToParent('dharma-section')">Back</a></section>
 
-    function saveData() {
-      const dataToSave = {};
-      Object.keys(videoSections).forEach(sectionId => {
-        videoSections[sectionId].videos.forEach(video => {
-          dataToSave[video.id] = { likes: video.likes, comments: video.comments };
-        });
-      });
-      localStorage.setItem('videoData', JSON.stringify(dataToSave));
-    }
+<!-- Baydin Section -->
+<section id="baydin-section">
+<h2>ကံကြမ္မာရေးရာအဖြာဖြာ</h2>
+<div class="card-grid">
+  <div class="card" onclick="showSub('jataka-card')">ဇာတာစစ်မယ်</div>
+  <div class="card" onclick="showSub('asat-ana-card')">အသားလုပ်နမိတ်အဟော</div>
+  <div class="card" onclick="showSub('asaung-card')">အဆောင်ယတြာ</div>
+  <div class="card" onclick="showSub('ganan-card')">ဂဏန်းဗေဒင်</div>
+  <div class="card" onclick="showSub('dream-card')">အိမ်မက်ဟောစာတမ်း</div>
+  <div class="card" onclick="showSub('hmay-card')">မှဲ့ဟောစာတမ်း</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
 
-    // သီးသန့်အခန်းစာမျက်နှာပြရန်
-    function showSectionPage(sectionId) {
-      const mainPage = document.getElementById('main-page');
-      const sectionPage = document.getElementById('section-page');
-      const sectionTitle = document.getElementById('section-title');
-      const sectionVideos = document.getElementById('section-videos');
+<!-- Health Section -->
+<section id="health-section">
+<h2>ကျန်းမာရေးရာအဖြာဖြာ</h2>
+<div class="card-grid">
+  <div class="card">အိမ်တွင်းကုထုံး</div>
+  <div class="card">တိုင်းရင်းဆေးများ</div>
+  <div class="card">ရောဂါလက္ခဏာများ</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
 
-      mainPage.classList.add('hidden');
-      sectionPage.classList.remove('hidden');
+<!-- Jataka Section -->
+<section id="jataka-section">
+<h2>ဇာတ်နိပါတ်တော်များ</h2>
+<div class="card-grid">
+  <div class="card">ဇာတ်နိပါတ် အခန်း ၁</div>
+  <div class="card">ဇာတ်နိပါတ် အခန်း ၂</div>
+  <div class="card">ဇာတ်နိပါတ် အခန်း ၃</div>
+</div>
+<a href="#" class="back-btn" onclick="backToHome()">Back</a>
+</section>
 
-      sectionTitle.textContent = videoSections[sectionId].title;
-      sectionVideos.innerHTML = '';
+<script>
+function showSection(id){
+  document.querySelector('.main-content').style.display='none';
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-      videoSections[sectionId].videos.forEach(video => {
-        const videoCard = document.createElement('div');
-        videoCard.className = 'video-card bg-white rounded-lg shadow-lg overflow-hidden';
-        videoCard.innerHTML = `
-          <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h2 class="text-lg font-semibold">${video.title}</h2>
-            <div class="flex items-center mt-2">
-              <button onclick="likeVideo('${video.id}')" class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">Like (<span id="likes-${video.id}">${video.likes}</span>)</button>
-              <button onclick="showVideo('${video.id}')" class="ml-2 bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">Watch Now</button>
-            </div>
-            <textarea id="comment-${video.id}" class="comment-box" placeholder="သင့်မှတ်ချက်ရေးပါ"></textarea>
-            <button onclick="addComment('${video.id}')" class="mt-2 bg-gray-500 text-white px-4 py-1 rounded hover:bg-gray-600">Comment</button>
-            <div id="comment-list-${video.id}" class="comment-list"></div>
-          </div>
-        `;
-        sectionVideos.appendChild(videoCard);
-        updateComments(video.id);
-      });
-    }
+function showSub(id){
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-    // Back ခလုတ်
-    document.getElementById('back-button').addEventListener('click', () => {
-      document.getElementById('main-page').classList.remove('hidden');
-      document.getElementById('section-page').classList.add('hidden');
-    });
+function backToParent(parentId){
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.getElementById(parentId).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-    // Like လုပ်ဆောင်ချက်
-    function likeVideo(videoId) {
-      Object.keys(videoSections).forEach(sectionId => {
-        videoSections[sectionId].videos.forEach(video => {
-          if (video.id === videoId) {
-            video.likes += 1;
-            document.getElementById(`likes-${videoId}`).textContent = video.likes;
-            saveData();
-          }
-        });
-      });
-    }
+function backToHome(){
+  document.querySelectorAll('section').forEach(sec=>sec.style.display='none');
+  document.querySelector('.main-content').style.display='flex';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
 
-    // Comment ထည့်ရန်
-    function addComment(videoId) {
-      const commentInput = document.getElementById(`comment-${videoId}`);
-      const commentText = commentInput.value.trim();
-      if (commentText) {
-        Object.keys(videoSections).forEach(sectionId => {
-          videoSections[sectionId].videos.forEach(video => {
-            if (video.id === videoId) {
-              video.comments.push(commentText);
-              commentInput.value = '';
-              updateComments(videoId);
-              saveData();
-            }
-          });
-        });
-      }
-    }
-
-    // Comment များပြသရန်
-    function updateComments(videoId) {
-      const commentList = document.getElementById(`comment-list-${videoId}`);
-      let comments = [];
-      Object.keys(videoSections).forEach(sectionId => {
-        videoSections[sectionId].videos.forEach(video => {
-          if (video.id === videoId) {
-            comments = video.comments;
-          }
-        });
-      });
-      commentList.innerHTML = comments.map(comment => `<p class="text-sm text-gray-700">${comment}</p>`).join('');
-    }
-
-    // ဗီဒီယိုဖွင့်ရန်
-    function showVideo(videoId) {
-      let videoData = null;
-      Object.keys(videoSections).forEach(sectionId => {
-        videoSections[sectionId].videos.forEach(video => {
-          if (video.id === videoId) {
-            videoData = video;
-          }
-        });
-      });
-      if (videoData) {
-        const modal = document.createElement('div');
-        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
-        modal.innerHTML = `
-          <div class="bg-white rounded-lg p-4 w-full max-w-3xl">
-            <h2 class="text-xl font-bold mb-4">${videoData.title}</h2>
-            <video controls class="w-full">
-              <source src="${videoData.url}" type="video/mp4">
-              သင့်ဘရောက်ဆာက ဗီဒီယိုကို မပံ့ပိုးပါ။
-            </video>
-            <button onclick="this.parentElement.parentElement.remove()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">ပိတ်ရန်</button>
-          </div>
-        `;
-        document.body.appendChild(modal);
-      }
-    }
-
-    // စာမျက်နှာစတင်ချိန်တွင် ဒေတာတင်ရန်
-    loadData();
-  </script>
 </body>
 </html>
