@@ -1,9 +1,2 @@
-/* 
-  Content-Security-Policy: script-src 'self' 'unsafe-inline' 
-'unsafe-eval'
-/* 
-  Content-Security-Policy: script-src 'self' 'unsafe-inline' 
-'unsafe-eval'
 /*
-  Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval'
-
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://api.netlify.com https://identity.netlify.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.netlify.com https://identity.netlify.com
