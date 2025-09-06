@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: onechannel/ONE-Channel-Book
   branch: main
 
 media_folder: "assets/uploads"
