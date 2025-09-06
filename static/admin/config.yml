@@ -1,40 +1,50 @@
 backend:
   name: git-gateway
   branch: main
-
-media_folder: "assets/uploads"
-public_folder: "/uploads"
-
+media_folder: "static/images"
+public_folder: "/images"
 collections:
   - name: "dharma"
-    label: "တရားတော်များ"
+    label: "Dharma"
     folder: "content/dharma"
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 2
+      summary: "{{title}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "body", widget: "markdown"}
-  - name: "karma"
-    label: "ကံကြမ္မာရေးရာ"
-    folder: "content/karma"
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["ပရိတ်", "ပဌာန်း", "မေတ္တာပို့"] }
+  - name: "fortune"
+    label: "Fortune"
+    folder: "content/fortune"
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 2
+      summary: "{{title}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["ဇာတာစစ်မယ်", "အသားလှုပ်နမိတ်အဟော", "အဆောင်ယတြာ", "ဂဏန်းဗေဒင်", "အိမ်မက်ဟောစာတမ်း", "မှဲ့ဟောစာတမ်း"] }
   - name: "health"
-    label: "ကျန်းမာရေးရာ"
+    label: "Health"
     folder: "content/health"
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 2
+      summary: "{{title}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Content", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["home-remedies", "symptoms", "traditional"] }
   - name: "jataka"
-    label: "ဇာတ်နိပါတ်တော်"
+    label: "Jataka"
     folder: "content/jataka"
     create: true
-    slug: "{{slug}}"
+    nested:
+      depth: 2
+      summary: "{{title}}"
     fields:
-      - {label: "ခေါင်းစဉ်", name: "title", widget: "string"}
-      - {label: "အကြောင်းအရာ", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["chapter-1", "chapter-2", "chapter-3"] }
