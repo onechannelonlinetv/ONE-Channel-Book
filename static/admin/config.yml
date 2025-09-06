@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: onechannelonlinetv/ONE-Channel-Book
+  name: git-gateway
   branch: main
-  auth_type: pkce
 
 media_folder: "assets/uploads"
 public_folder: "/uploads"
