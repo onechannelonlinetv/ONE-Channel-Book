@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: onechannel/ONE-Channel-Book
+  repo: onechannelonlinetv/ONE-Channel-Book
   branch: main
 
 media_folder: "assets/uploads"
