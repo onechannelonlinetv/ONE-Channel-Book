@@ -4,47 +4,108 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 collections:
-  - name: "dharma"
-    label: "ဓမ္မ"
-    folder: "content/dharma"
+  - name: "dharma_paritta"
+    label: "ဓမ္မ - ပရိတ်"
+    folder: "content/dharma/ပရိတ်"
     create: true
-    nested:
-      depth: 2
-      summary: "{{title}}"
     fields:
       - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
       - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
-      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["ပရိတ်", "ပဌာန်း", "မေတ္တာပို့"] }
-  - name: "fortune"
-    label: "ဗေဒင်"
-    folder: "content/fortune"
+  - name: "dharma_pathan"
+    label: "ဓမ္မ - ပဌာန်း"
+    folder: "content/dharma/ပဌာန်း"
     create: true
-    nested:
-      depth: 2
-      summary: "{{title}}"
     fields:
       - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
       - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
-      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["ဇာတာစစ်မယ်", "အသားလှုပ်နမိတ်အဟော", "အဆောင်ယတြာ", "ဂဏန်းဗေဒင်", "အိမ်မက်ဟောစာတမ်း", "မှဲ့ဟောစာတမ်း"] }
-  - name: "health"
-    label: "ကျန်းမာရေး"
-    folder: "content/health"
+  - name: "dharma_metta"
+    label: "ဓမ္မ - မေတ္တာပို့"
+    folder: "content/dharma/မေတ္တာပို့"
     create: true
-    nested:
-      depth: 2
-      summary: "{{title}}"
     fields:
       - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
       - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
-      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["အိမ်တွင်းကုထုံး", "ရောဂါလက္ခဏာ", "ရိုးရာ"] }
-  - name: "jataka"
-    label: "ဇာတ်ကတ္ထဳ"
-    folder: "content/jataka"
+  - name: "fortune_zatacemay"
+    label: "ဗေဒင် - ဇာတာစစ်မယ်"
+    folder: "content/fortune/ဇာတာစစ်မယ်"
     create: true
-    nested:
-      depth: 2
-      summary: "{{title}}"
     fields:
       - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
       - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
-      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["အခန်း-၁", "အခန်း-၂", "အခန်း-၃"] }
+  - name: "fortune_astarhlup"
+    label: "ဗေဒင် - အသားလှုပ်နမိတ်အဟော"
+    folder: "content/fortune/အသားလှုပ်နမိတ်အဟော"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "fortune_asaungyatra"
+    label: "ဗေဒင် - အဆောင်ယတြာ"
+    folder: "content/fortune/အဆောင်ယတြာ"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "fortune_gananywaydin"
+    label: "ဗေဒင် - ဂဏန်းဗေဒင်"
+    folder: "content/fortune/ဂဏန်းဗေဒင်"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "fortune_eimmakhausa"
+    label: "ဗေဒင် - အိမ်မက်ဟောစာတမ်း"
+    folder: "content/fortune/အိမ်မက်ဟောစာတမ်း"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "fortune_mhatha"
+    label: "ဗေဒင် - မှဲ့ဟောစာတမ်း"
+    folder: "content/fortune/မှဲ့ဟောစာတမ်း"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "health_home_remedies"
+    label: "ကျန်းမာရေး - အိမ်တွင်းကုထုံး"
+    folder: "content/health/အိမ်တွင်းကုထုံး"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "health_symptoms"
+    label: "ကျန်းမာရေး - ရောဂါလက္ခဏာ"
+    folder: "content/health/ရောဂါလက္ခဏာ"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "health_traditional"
+    label: "ကျန်းမာရေး - ရိုးရာ"
+    folder: "content/health/ရိုးရာ"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "jataka_chapter_1"
+    label: "ဇာတ်ကတ္ထဳ - အခန်း-၁"
+    folder: "content/jataka/အခန်း-၁"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "jataka_chapter_2"
+    label: "ဇာတ်ကတ္ထဳ - အခန်း-၂"
+    folder: "content/jataka/အခန်း-၂"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+  - name: "jataka_chapter_3"
+    label: "ဇာတ်ကတ္ထဳ - အခန်း-၃"
+    folder: "content/jataka/အခန်း-၃"
+    create: true
+    fields:
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
