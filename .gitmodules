@@ -2,6 +2,10 @@
     path = ONE-Channel-Book
     url = 
 https://github.com/onechannelonlinetv/ONE-Channel-Book.git[submodule 
+"ONE-Channel-Book"]
+    path = ONE-Channel-Book
+    url = 
+https://github.com/onechannelonlinetv/ONE-Channel-Book.git[submodule 
 "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod
