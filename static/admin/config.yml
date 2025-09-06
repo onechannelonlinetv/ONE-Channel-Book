@@ -5,46 +5,46 @@ media_folder: "static/images"
 public_folder: "/images"
 collections:
   - name: "dharma"
-    label: "Dharma"
+    label: "ဓမ္မ"
     folder: "content/dharma"
     create: true
     nested:
       depth: 2
       summary: "{{title}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Category", name: "category", widget: "select", options: ["ပရိတ်", "ပဌာန်း", "မေတ္တာပို့"] }
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["ပရိတ်", "ပဌာန်း", "မေတ္တာပို့"] }
   - name: "fortune"
-    label: "Fortune"
+    label: "ဗေဒင်"
     folder: "content/fortune"
     create: true
     nested:
       depth: 2
       summary: "{{title}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Category", name: "category", widget: "select", options: ["ဇာတာစစ်မယ်", "အသားလှုပ်နမိတ်အဟော", "အဆောင်ယတြာ", "ဂဏန်းဗေဒင်", "အိမ်မက်ဟောစာတမ်း", "မှဲ့ဟောစာတမ်း"] }
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["ဇာတာစစ်မယ်", "အသားလှုပ်နမိတ်အဟော", "အဆောင်ယတြာ", "ဂဏန်းဗေဒင်", "အိမ်မက်ဟောစာတမ်း", "မှဲ့ဟောစာတမ်း"] }
   - name: "health"
-    label: "Health"
+    label: "ကျန်းမာရေး"
     folder: "content/health"
     create: true
     nested:
       depth: 2
       summary: "{{title}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Category", name: "category", widget: "select", options: ["home-remedies", "symptoms", "traditional"] }
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["အိမ်တွင်းကုထုံး", "ရောဂါလက္ခဏာ", "ရိုးရာ"] }
   - name: "jataka"
-    label: "Jataka"
+    label: "ဇာတ်ကတ္ထဳ"
     folder: "content/jataka"
     create: true
     nested:
       depth: 2
       summary: "{{title}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Category", name: "category", widget: "select", options: ["chapter-1", "chapter-2", "chapter-3"] }
+      - { label: "ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "အကြောင်းအရာ", name: "body", widget: "markdown" }
+      - { label: "အမျိုးအစား", name: "category", widget: "select", options: ["အခန်း-၁", "အခန်း-၂", "အခန်း-၃"] }
