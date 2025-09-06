@@ -1,0 +1,7 @@
+git add _headers
+git commit -m "Add CSP rule to headers file"
+git push origin main
+
+/*
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval'
+
