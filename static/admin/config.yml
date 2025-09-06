@@ -7,10 +7,28 @@ public_folder: "/uploads"
 
 collections:
   - name: "dharma"
-    label: "Dharma Section"
+    label: "တရားတော်များ"
     folder: "content/dharma"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
+  - name: "karma"
+    label: "ကံကြမ္မာရေးရာ"
+    folder: "content/karma"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "health"
+    label: "ကျန်းမာရေးရာ"
+    folder: "content/health"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "jataka"
+    label: "ဇာတ်နိပါတ်တော်
