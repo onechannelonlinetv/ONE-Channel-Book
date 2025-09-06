@@ -31,4 +31,4 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
   - name: "jataka"
-    label: "ဇာတ်နိပါတ်တော်
+    label: "ဇာတ်နိပါတ်တော်"
