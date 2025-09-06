@@ -1,2 +1,2 @@
-/*
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://api.netlify.com https://identity.netlify.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.netlify.com https://identity.netlify.com
+Merge branch 'main' of github.com:onechannelonlinetv/ONE-Channel-Book
+Resolved merge conflict in _headers for Netlify CMS CSP settings
