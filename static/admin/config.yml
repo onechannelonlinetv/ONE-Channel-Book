@@ -32,3 +32,9 @@ collections:
       - {label: "Content", name: "body", widget: "markdown"}
   - name: "jataka"
     label: "ဇာတ်နိပါတ်တော်"
+    folder: "content/jataka"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ခေါင်းစဉ်", name: "title", widget: "string"}
+      - {label: "အကြောင်းအရာ", name: "body", widget: "markdown"}
